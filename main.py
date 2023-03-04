@@ -14,7 +14,11 @@ def play_game():
     print('-=' * 8)
     print('    End Game!')
     print('-=' * 8)
-    print(f"The winner is '{ttt.winner}'")
+    if ttt.winner == ' ':
+        print('A tie! No one won.')
+    else:
+        print(f"The winner is '{ttt.winner}'")
+        print(ttt.winner, type(ttt.winner))
 
 
 if __name__ == '__main__':

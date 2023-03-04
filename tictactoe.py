@@ -77,6 +77,9 @@ class TicTacToe:
             if col == 'OOO':
                 self.winner = 'O'
                 self.has_winner = True
+        if ' ' not in row_concat[0] + row_concat[1] + row_concat[2]:
+            self.winner = ' '
+            self.has_winner = True
 
 
 if __name__ == '__main__':
@@ -92,4 +95,8 @@ if __name__ == '__main__':
     print('-=' * 8)
     print('    End Game!')
     print('-=' * 8)
-    print(f"The winner is '{ttt.winner}'")
+    if ttt.winner == 'No One':
+        print('A tie! No one won.')
+    else:
+        print(f"The winner is '{ttt.winner}'")
+        print(ttt.winner, type(ttt.winner))
